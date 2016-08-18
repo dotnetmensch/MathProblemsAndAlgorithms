@@ -15,15 +15,29 @@ namespace ServiceLibraryTest
         [TestMethod]
         public void GetSumOfMultiplesOf3And5Test()
         {
-            var sumOf10 = ThreeOfFive.GetSumOfMultiplesOf3And5(10);
+            var sumOf10 = MathProblems.GetSumOfMultiplesOf3And5(10);
             Assert.AreEqual(23, sumOf10);
         }
 
         [TestMethod]
         public void GetEvenFibSum()
         {
-            var sumOf89 = EvenFibSum.GetSum(89);
+            var sumOf89 = MathProblems.GetSumOfEvenFib(89);
             Assert.AreEqual(44, sumOf89);
+        }
+
+        [TestMethod]
+        public void GetLargestPrimeFactorTest()
+        {
+            var largest = MathProblems.GetLargestPrimeFactor(13195);
+            Assert.AreEqual(29, largest);
+        }
+
+        [TestMethod]
+        public void LargestPalindromeTest()
+        {
+            var largest = MathProblems.LargestPalindromicProductOfTwo3DigitNumbers();
+            
         }
     }
 }
