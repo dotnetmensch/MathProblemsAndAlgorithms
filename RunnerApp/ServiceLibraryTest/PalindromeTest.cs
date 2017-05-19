@@ -17,5 +17,6 @@ namespace ServiceLibraryTest
             var largest = Palindrome.LargestPalindromicOfTwo(2);
             Assert.AreEqual(9009, largest);
         }
+
     }
 }

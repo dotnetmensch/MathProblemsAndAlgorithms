@@ -8,7 +8,7 @@ namespace ServiceLibrary
 {
     public static class Palindrome
     {
-        public static int LargestPalindromicOfTwo(int digits)
+        public static long LargestPalindromicOfTwo(int digits)
         {
             string startString = string.Empty;
             var endString = string.Empty;
@@ -20,15 +20,15 @@ namespace ServiceLibrary
                 else
                     endString += "0";
             }
-            var start1 = int.Parse(startString);
-            var end = int.Parse(endString);
+            var start1 = long.Parse(startString);
+            var end = long.Parse(endString);
 
-            var result = 0;
-            var palindromes = new List<int>();
+            long result = 0;
+            var palindromes = new List<long>();
 
-            for (int i = start1; i >= end; i--)
+            for (long i = start1; i >= end; i--)
             {
-                for (int j = start1; j >= end; j--)
+                for (long j = start1; j >= end; j--)
                 {
                     result = i * j;
                     if (result.IsPalindromic())
@@ -41,9 +41,11 @@ namespace ServiceLibrary
         }
 
 
-        private static bool IsPalindromic(this int number)
+        private static bool IsPalindromic(this long number)
         {
-            return number.ToString() == number.ToString().Reverse().ToString();
+            var charArray = number.ToString().ToCharArray();
+            var reverseCharArray = charArray.Reverse().ToArray();
+            return charArray.SequenceEqual(reverseCharArray);
         }
     }
 }
